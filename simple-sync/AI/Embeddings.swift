@@ -110,36 +110,39 @@ struct Embeddings {
         }
         
         // Get the foreground subjects as a masked image.
-        let requst = VNGenerateForegroundInstanceMaskRequest()
-        let handler = VNImageRequestHandler(cgImage: cgImage)
-        do {
-            try handler.perform([requst])
-        } catch {
-            print("Failed to perform the request: \(error.localizedDescription)")
-            completion(nil)
-        }
-        let foregroundImage: CGImage? = {
-            if let result = requst.results?.first {
-                let maskedImagePixelBuffer = try! result.generateMaskedImage(
-                    ofInstances: result.allInstances,
-                    from: handler,
-                    croppedToInstancesExtent: false
-                )
-                
-                let ciContext = CIContext()
-                let ciImage = CIImage(cvPixelBuffer: maskedImagePixelBuffer)
-                let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent)
-                
-                return cgImage
+        if #available(iOS 17.0, *) {
+            let requst = VNGenerateForegroundInstanceMaskRequest()
+            let handler = VNImageRequestHandler(cgImage: cgImage)
+            do {
+                try handler.perform([requst])
+            } catch {
+                print("Failed to perform the request: \(error.localizedDescription)")
+                completion(nil)
             }
-            
-            return nil
-        }()
-        
-        if let foregroundImage = foregroundImage {
-            featureEmbedding(from: foregroundImage, completion: completion)
-        } else {
-            featureEmbedding(from: cgImage, completion: completion)
+
+            let foregroundImage: CGImage? = {
+                if let result = requst.results?.first {
+                    let maskedImagePixelBuffer = try! result.generateMaskedImage(
+                        ofInstances: result.allInstances,
+                        from: handler,
+                        croppedToInstancesExtent: false
+                    )
+
+                    let ciContext = CIContext()
+                    let ciImage = CIImage(cvPixelBuffer: maskedImagePixelBuffer)
+                    let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent)
+
+                    return cgImage
+                }
+
+                return nil
+            }()
+
+            if let foregroundImage = foregroundImage {
+                featureEmbedding(from: foregroundImage, completion: completion)
+            } else {
+                featureEmbedding(from: cgImage, completion: completion)
+            }
         }
     }
 }

@@ -288,9 +288,9 @@ final class App {
         var listener: NWListener!
         do {
             listener = try NWListener(
-                service: NWListener.Service(name: uuid, type: "_\(name)._tcp"),
                 using: networkParameters
             )
+            listener.service = NWListener.Service(name: uuid, type: "_\(name)._tcp")
         } catch {
             Log.error("Failed to create listener: \(error)")
             return nil
@@ -532,7 +532,11 @@ final class App {
         guard let endpoint = endpoint else { return nil }
         
         // Append the name of the app as the last path component of the endpoint URL.
-        let url = endpoint.url.appending(path: name)
+        let url = if #available(iOS 16.0, *) {
+            endpoint.url.appending(path: name)
+        } else {
+            endpoint.url.appendingPathComponent(name)
+        }
         
         // Set up the target endpoint.
         let target = URLEndpoint(url: url)

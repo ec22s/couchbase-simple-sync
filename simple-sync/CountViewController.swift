@@ -112,14 +112,22 @@ class CountViewController: UIViewController {
     
     @IBAction func infoButtonPressed(_ sender: UIBarButtonItem) {
         let alert = Actions.info(for: "count-sync")
-        alert.popoverPresentationController?.sourceItem = sender
+        if #available(iOS 16.0, *) {
+            alert.popoverPresentationController?.sourceItem = sender
+        } else {
+            alert.popoverPresentationController?.barButtonItem = sender
+        }
         alert.title = "Tap the buttons, change the count, and sync with devices around you"
         present(alert, animated: true)
     }
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         let activity = Actions.share(for: self)
-        activity.popoverPresentationController?.sourceItem = sender
+        if #available(iOS 16.0, *) {
+            activity.popoverPresentationController?.sourceItem = sender
+        } else {
+            activity.popoverPresentationController?.barButtonItem = sender
+        }
         present(activity, animated: true)
     }
 }

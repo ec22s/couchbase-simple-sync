@@ -17,8 +17,6 @@
 		B022BC782A4E9C3900CA835A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022BC772A4E9C3900CA835A /* ViewController.swift */; };
 		B022BC7D2A50B53C00CA835A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022BC7C2A50B53C00CA835A /* Settings.swift */; };
 		B022BC7F2A50C10400CA835A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B022BC7E2A50C10400CA835A /* Settings.bundle */; };
-		B0712A1E2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0712A1D2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework */; };
-		B0712A1F2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0712A1D2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B09F7A3A2A00A45400022B9E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F7A392A00A45400022B9E /* Credentials.swift */; };
 		B0B3A1FB2A58799D002BD6BC /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A1FA2A58799C002BD6BC /* Actions.swift */; };
 		B0B3A1FD2A59C881002BD6BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B3A1FC2A59C87F002BD6BC /* SearchViewController.swift */; };
@@ -29,25 +27,10 @@
 		B0D4BAD12A5A0723001A1A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D4BAD02A5A0723001A1A42 /* Assets.xcassets */; };
 		B0E3E8C82BA64CD5002893F9 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3E8C72BA64CD5002893F9 /* ImagePickerController.swift */; };
 		B0E3E8CB2BA64D4C002893F9 /* Embeddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E3E8CA2BA64D4C002893F9 /* Embeddings.swift */; };
-		B0E3E8CC2BA64D82002893F9 /* CouchbaseLiteVectorSearch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E3E8C32BA64CC5002893F9 /* CouchbaseLiteVectorSearch.xcframework */; };
-		B0E3E8CD2BA64D82002893F9 /* CouchbaseLiteVectorSearch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0E3E8C32BA64CC5002893F9 /* CouchbaseLiteVectorSearch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0F1C88B29FF89450022FC25 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1C88A29FF89450022FC25 /* App.swift */; };
+		CE05E3B62D89696900478D88 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE05E3B52D89696900478D88 /* CouchbaseLiteSwift */; };
+		CE05E3BC2D89845200478D88 /* CouchbaseLiteVectorSearch in Frameworks */ = {isa = PBXBuildFile; productRef = CE05E3BB2D89845200478D88 /* CouchbaseLiteVectorSearch */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B0712A202A57AC3E00F33C28 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B0E3E8CD2BA64D82002893F9 /* CouchbaseLiteVectorSearch.xcframework in Embed Frameworks */,
-				B0712A1F2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B00D636929FD74FC00825DDB /* simple-sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-sync.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E3E8CC2BA64D82002893F9 /* CouchbaseLiteVectorSearch.xcframework in Frameworks */,
-				B0712A1E2A57AC3E00F33C28 /* CouchbaseLiteSwift.xcframework in Frameworks */,
+				CE05E3B62D89696900478D88 /* CouchbaseLiteSwift in Frameworks */,
+				CE05E3BC2D89845200478D88 /* CouchbaseLiteVectorSearch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +154,6 @@
 				B00D636529FD74FC00825DDB /* Sources */,
 				B00D636629FD74FC00825DDB /* Frameworks */,
 				B00D636729FD74FC00825DDB /* Resources */,
-				B0712A202A57AC3E00F33C28 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +188,10 @@
 				Base,
 			);
 			mainGroup = B00D636029FD74FC00825DDB;
+			packageReferences = (
+				CE05E3B42D89696900478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */,
+				CE05E3BA2D89845200478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-vector-search-spm" */,
+			);
 			productRefGroup = B00D636A29FD74FC00825DDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,26 +383,28 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FMV3C84SQX;
+				DEVELOPMENT_TEAM = TAFC2PM76F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/simple-sync/Frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "simple-sync/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Sync;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleSync;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To enable you to take photos and search for similar items, we need access to your camera.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "To find and connect with other devices on your local network for peer-to-peer sync, we need access to your local network. This enables syncing data directly between devices without needing an internet connection.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.smplthings.ColorSync;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ec22s.SimpleSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -434,26 +422,28 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FMV3C84SQX;
+				DEVELOPMENT_TEAM = TAFC2PM76F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/simple-sync/Frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "simple-sync/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Sync;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleSync;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To enable you to take photos and search for similar items, we need access to your camera.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "To find and connect with other devices on your local network for peer-to-peer sync, we need access to your local network. This enables syncing data directly between devices without needing an internet connection.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.smplthings.ColorSync;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ec22s.SimpleSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -486,6 +476,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE05E3B42D89696900478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchbase/couchbase-lite-swift-ee.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.2;
+			};
+		};
+		CE05E3BA2D89845200478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-vector-search-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchbase/couchbase-lite-vector-search-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE05E3B52D89696900478D88 /* CouchbaseLiteSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE05E3B42D89696900478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */;
+			productName = CouchbaseLiteSwift;
+		};
+		CE05E3BB2D89845200478D88 /* CouchbaseLiteVectorSearch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE05E3BA2D89845200478D88 /* XCRemoteSwiftPackageReference "couchbase-lite-vector-search-spm" */;
+			productName = CouchbaseLiteVectorSearch;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B00D636129FD74FC00825DDB /* Project object */;
 }

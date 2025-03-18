@@ -48,7 +48,11 @@ class SearchViewController: CollectionViewController, UISearchResultsUpdating, U
         // Initialize the vector index on the "embedding" field for image search.
         var vectorIndex = VectorIndexConfiguration(expression: "embedding", dimensions: 768, centroids: 2)
         vectorIndex.metric = .cosine
-        try! collection.createIndex(withName: "ImageVectorIndex", config: vectorIndex)
+        do {
+            try collection.createIndex(withName: "ImageVectorIndex", config: vectorIndex)
+        } catch {
+            print("[ERROR]", error, vectorIndex)
+        }
 
         // Initialize the full-text search index on the "name", "color", and "category" fields.
         let ftsIndex = FullTextIndexConfiguration(["name", "color", "category"])
@@ -477,7 +481,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         searchController.delegate = self
         searchController.automaticallyShowsCancelButton = true
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.scopeBarActivation = .manual
+        if #available(iOS 16.0, *) {
+            searchController.scopeBarActivation = .manual
+        } else {
+            searchController.automaticallyShowsScopeBar = true
+        }
         searchController.searchBar.showsScopeBar = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
@@ -553,14 +561,22 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     @IBAction func infoButtonPressed(_ sender: UIBarButtonItem) {
         let alert = Actions.info(for: "search")
-        alert.popoverPresentationController?.sourceItem = sender
+        if #available(iOS 16.0, *) {
+            alert.popoverPresentationController?.sourceItem = sender
+        } else {
+            alert.popoverPresentationController?.barButtonItem = sender
+        }
         alert.title = "Search using name, color, category, image, and more"
         present(alert, animated: true)
     }
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         let activity = Actions.share(for: self)
-        activity.popoverPresentationController?.sourceItem = sender
+        if #available(iOS 16.0, *) {
+            activity.popoverPresentationController?.sourceItem = sender
+        } else {
+            activity.popoverPresentationController?.barButtonItem = sender
+        }
         present(activity, animated: true)
     }
 }
