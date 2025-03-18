@@ -1,3 +1,42 @@
+# Couchbase LiteによるiOS端末間のデータ同期テスト
+
+[オリジナル](https://github.com/waynecarter/simple-sync)を少し修正し2025年3月13日の [モバチキ 〜Mobile Tips 共有会〜 #7](https://lycorptech-jp.connpass.com/event/345858/) でデモ動画を流したアプリです
+
+修正点は以下のとおりです (詳細は https://github.com/ec22s/couchbase-simple-sync/pull/1 を参照)
+
+- iOS 15.6以上で動くようにした (オリジナルは17.0以上)
+- SPMを使い、パッケージの手動インストールを不要にした
+- `Couchbase Lite Vector Search` を使う箇所がエラーで動かないため一時的に回避
+
+<br>
+
+当日のスライドとデモ動画です
+- [スライド](https://github.com/user-attachments/files/19321273/20250313_Fukuoka.pdf)
+  - 誤記などを修正しています
+  - PDFなのでデモ動画 (p.18) は動きません
+
+- デモ動画その1
+
+  https://github.com/user-attachments/assets/ccf01161-7a74-4b6b-a253-035403815ae4
+  - スライドp.17-18にある、当日流したものです
+  - この時点ではオリジナルとほぼソースでビルドしました
+  - 画面左側に映るルータの設定で、通信がインターネットへ出ない状態にしています
+  - マップでもインターネットと通信できないことを確認しています (キャッシュのみ表示)
+  - このLAN内だけの通信で、シミュレータ上のアプリ (画面左) と実機のiPad (右) で、アプリ内の「円の色」が同期します
+
+- デモ動画その2    
+
+  https://github.com/user-attachments/assets/5c8645bc-11be-4462-988b-8516f2e0bfde
+  - 本リポジトリをビルドし動作を確認しました
+  - 最初に映る設定画面でクラウドとの同期設定がない、つまり同期するなら端末同士の通信になることが確認できます
+  - アプリを開き、実機のiPhone7 (画面左、iOS15) とシミュレータ上のアプリ (右) がいろいろ同期します
+
+<br>
+
+以下、オリジナルの README です. パッケージの手動インストール ([Run the Project](#run-the-project) 2.) は、本ソースを使う場合不要です
+
+---
+
 # Simple Sync
 
 Simple Sync is a demonstration of how to read, write, search, and sync data using [Couchbase Lite](https://docs.couchbase.com/couchbase-lite/current/). This repository provides a comprehensive guide to handling different types of data and demonstrates how to synchronize this data across devices, with and without the Internet.
