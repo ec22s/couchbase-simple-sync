@@ -1,9 +1,5 @@
 **/*.DS_Store
 
-# Ignore Couchbase Lite framework
-**/CouchbaseLiteSwift.xcframework
-**/CouchbaseLiteVectorSearch.xcframework
-
 # Ignore everything in the xcuserdata directory
 xcuserdata/
 
@@ -12,3 +8,5 @@ xcuserdata/
 # But do not ignore .sh and .cnf files in gen-credentials
 !/gen-credentials/*.sh
 !/gen-credentials/*.cnf
+
+*/project.xcworkspace/contents.xcworkspacedata

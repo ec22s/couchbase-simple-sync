@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jgc-gp-naq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jgc-gp-naq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sync-->
+        <!--Simple Sync-->
         <scene sceneID="ALf-eg-j3U">
             <objects>
                 <viewController id="wiH-QP-Bee" customClass="CountViewController" customModule="simple_sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Count" image="123.rectangle" catalog="system" id="8qo-tS-FCt"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Sync" id="Y5b-fF-kK4">
+                    <navigationItem key="navigationItem" title="Simple Sync" id="Y5b-fF-kK4">
                         <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="c9x-Ot-CSD">
                             <connections>
                                 <action selector="infoButtonPressed:" destination="wiH-QP-Bee" id="LUd-Nq-DvH"/>
@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="-3340" y="1433"/>
         </scene>
-        <!--Sync-->
+        <!--Simple Sync-->
         <scene sceneID="dOF-iU-Rdu">
             <objects>
                 <viewController storyboardIdentifier="ColorViewController" id="0wf-eb-QWm" customClass="ColorViewController" customModule="simple_sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Color" image="paintbrush" catalog="system" id="ljL-5Q-QQp"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Sync" id="bX1-7k-PT5">
+                    <navigationItem key="navigationItem" title="Simple Sync" id="bX1-7k-PT5">
                         <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="NEg-Hr-JKm">
                             <connections>
                                 <action selector="infoButtonPressed:" destination="0wf-eb-QWm" id="v4A-7T-PeG"/>
@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="-4218" y="666"/>
         </scene>
-        <!--Sync-->
+        <!--Simple Sync-->
         <scene sceneID="7WA-jr-qrA">
             <objects>
                 <viewController id="n5J-ru-T0H" customClass="PhotoViewController" customModule="simple_sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,7 +219,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo" image="photo" catalog="system" id="sJt-Q2-1Na"/>
-                    <navigationItem key="navigationItem" title="Sync" id="5Zp-tq-dRK">
+                    <navigationItem key="navigationItem" title="Simple Sync" id="5Zp-tq-dRK">
                         <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="zJq-Sb-kwZ">
                             <connections>
                                 <action selector="infoButtonPressed:" destination="n5J-ru-T0H" id="y3M-rU-8KG"/>
