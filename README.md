@@ -1,6 +1,8 @@
 # Couchbase LiteによるiOS端末間のデータ同期テスト
 
-[オリジナル](https://github.com/waynecarter/simple-sync)を少し修正し2025年3月13日の [モバチキ 〜Mobile Tips 共有会〜 #7](https://lycorptech-jp.connpass.com/event/345858/) でデモ動画を流したアプリです
+[オリジナル](https://github.com/waynecarter/simple-sync)を少し修正し2025年3月13日の [モバチキ 〜Mobile Tips 共有会〜 #7](https://lycorptech-jp.connpass.com/event/345858/) の発表でデモ動画を流したアプリです
+
+発表タイトル「オフラインファーストで自動同期もするモバイルDBあれこれ」
 
 修正点は以下のとおりです (詳細は https://github.com/ec22s/couchbase-simple-sync/pull/1 を参照)
 
@@ -11,9 +13,8 @@
 <br>
 
 当日のスライドとデモ動画です
-- [スライド](https://github.com/user-attachments/files/19321273/20250313_Fukuoka.pdf)
+- [スライド (PDF)](https://github.com/user-attachments/files/19321273/20250313_Fukuoka.pdf)
   - 誤記などを修正しています
-  - PDFなのでデモ動画 (p.18) は動きません
 
 - デモ動画その1
 
