@@ -13,8 +13,9 @@
 <br>
 
 当日のスライドとデモ動画です
-- [スライド (PDF)](https://github.com/user-attachments/files/19321273/20250313_Fukuoka.pdf)
+- [スライド (PDF)](https://github.com/user-attachments/files/19337615/20250313_Fukuoka.pdf)
   - 誤記などを修正しています
+  - 文字を濃くしました (2025/3/19)
 
 - デモ動画その1
 
