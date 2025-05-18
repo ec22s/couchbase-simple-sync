@@ -13,7 +13,7 @@
 <br>
 
 当日のスライドとデモ動画です
-- [スライド (PDF)](https://github.com/user-attachments/files/19337615/20250313_Fukuoka.pdf)
+- [スライド (PDF)](https://ec22s.github.io/couchbase-simple-sync/20250313_Fukuoka.pdf)
   - 誤記などを修正しています
   - 文字を濃くしました (2025/3/19)
 
