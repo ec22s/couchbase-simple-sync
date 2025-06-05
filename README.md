@@ -35,6 +35,13 @@
 
 <br>
 
+- 追記 (2025.6.6)
+
+  上のデモを再度試そうとビルドし直したら、端末間でデータ同期されなくなっていました. Issue https://github.com/ec22s/couchbase-simple-sync/issues/7 で調査中です
+
+
+<br>
+
 以下、オリジナルの README です. パッケージの手動インストール ([Run the Project](#run-the-project) 2.) は、本ソースを使う場合不要です
 
 ---
